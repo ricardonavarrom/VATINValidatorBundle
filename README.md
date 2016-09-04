@@ -9,8 +9,27 @@ A Symfony bundle for for validating VAT identification numbers (VATINs).
 Installation
 ------------
 
-This bundle is available on [Packagist](https://packagist.org/packages/ricardonavarrom/vatin-validator-bundle):
+This bundle is available on [Packagist](https://packagist.org/packages/ricardonavarrom/vatin-validator-bundle).
+
+You can install this bundle using composer
 
 ```bash
-$ composer require ricardonavarrom/vatin-validator-bundle
+$ composer require ricardonavarrom/vatin-validator-bundle:dev-master
 ```
+or add the package to your composer.json file directly.
+
+After you have installed the package, you just need to add the bundle to your AppKernel.php file:
+
+```bash
+// in AppKernel::registerBundles()
+$bundles = array(
+    // ...
+    new ricardonavarrom\VATINValidatorBundle\VATINValidatorBundle(),
+    // ...
+);
+```
+
+Configuration
+-------------
+
+VATINValidatorBundle requires no initial configuration to get you started.
