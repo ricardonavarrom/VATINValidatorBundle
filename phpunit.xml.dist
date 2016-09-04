@@ -40,6 +40,7 @@
                 <directory>vendor</directory>
                 <file>DependencyInjection/Configuration.php</file>
                 <file>DependencyInjection/VATINValidatorExtension.php</file>
+                <file>VATINValidatorBundle.php</file>
             </exclude>
         </whitelist>
     </filter>
