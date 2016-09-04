@@ -1,0 +1,8 @@
+services:
+    ricardonavarrom.vatin_validator:
+        class: ricardonavarrom\VATINValidatorBundle\Validator\VATINValidator
+
+    ricardonavarrom.vatin_validator.es:
+        class: ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorES
+        tags:
+            - { name: ricardonavarrom.vatin_validator_located, locale: "es" }
