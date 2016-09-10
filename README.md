@@ -37,7 +37,7 @@ VATINValidatorBundle requires no initial configuration to get you started.
 
 Basic usage
 -----------
-The configured serializer is available as **_ricardonavarrom.vatin_validator_** service. You must assign a valid locale (view availables locales section).
+The configured validator is available as **_ricardonavarrom.vatin_validator_** service. You must assign a valid locale (view availables locales section).
 
 ```bash
 $locale = 'es';
@@ -58,6 +58,6 @@ $vatinIsValid = $locatedValidator->validate($vatin);
 Availables locales
 ------------------
 
-ES
-
-(Under construction)
+| Country        | Locale           | Local name                                                                                                                                               |
+| -------------- |:----------------:| --------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Spain          | es               | Número de Identificación Fiscal (for freelancers), Número de Identidad de Extranjero (for foreigners) or Código de Identificación Fiscal (for companies) |
