@@ -58,6 +58,6 @@ $vatinIsValid = $locatedValidator->validate($vatin);
 Availables locales
 ------------------
 
-| Country        | Locale           | Local name                                                                                                                                               |
-| -------------- | -----------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Spain          | es               | Número de Identificación Fiscal (for freelancers), Número de Identidad de Extranjero (for foreigners) or Código de Identificación Fiscal (for companies) |
+| Locale        | Country           | Local name                                                                                                                                               |
+| ------------- | ------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **es**        | Spain             | Número de Identificación Fiscal (for freelancers), Número de Identidad de Extranjero (for foreigners) or Código de Identificación Fiscal (for companies) |
