@@ -61,3 +61,12 @@ Availables locales
 | Locale        | Country           | Local name                                                                                                                                               |
 | ------------- | ------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **es**        | Spain             | Número de Identificación Fiscal (for freelancers), Número de Identidad de Extranjero (for foreigners) or Código de Identificación Fiscal (for companies) |
+
+
+Constraints
+-----------
+VATINValidatorBundle provides the following constraints:
+
+| Constraint               | Country           | Options                                                                                                                                                  |
+| ------------------------ | ------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **VATINConstraintEs**    | Spain             |                                                                                                                                                          |
