@@ -6,3 +6,9 @@ services:
         class: ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorES
         tags:
             - { name: ricardonavarrom.vatin_validator_located, locale: "es" }
+
+    ricardonavarrom.vatin_validator_constraint.es:
+        class: ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINConstraintValidatorEs
+        arguments: ["@ricardonavarrom.vatin_validator.es"]
+        tags:
+            - { name: validator.constraint_validator }
