@@ -61,12 +61,32 @@ Availables locales
 | Locale        | Country           | Local name                                                                                                                                               |
 | ------------- | ------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **es**        | Spain             | Número de Identificación Fiscal (for freelancers), Número de Identidad de Extranjero (for foreigners) or Código de Identificación Fiscal (for companies) |
+*We are working to implement more availables locales.*
 
 
 Constraints
 -----------
 VATINValidatorBundle provides the following constraints:
 
-| Constraint               | Country           | Options                                                                                                                                       |
-| ------------------------ | ------------------| ----------------------------------------------------------------------------------------------------------------------------------------------|
-| **VATINEsConstraint**    | Spain             |                                                                                                                                               |
+| Constraint               | Country           | Options                                                                                                                                                                                                                                          |
+| ------------------------ | ------------------| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **VATINEsConstraint**    | Spain             | **message**: string (default: 'The VATIN "%vatin%" is not a valid "%validationModality%".'). **allowLowerCase**: boolean (default: true). **validationModality**: 'NIF', 'NIE' or 'CIF' (by default checks in all validation modalities).        |
+For example:
+
+```bash
+// src/AppBundle/Entity/Customer.php
+namespace AppBundle\Entity;
+
+use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINEsConstraint;
+
+class Customer
+{
+    /**
+     * @VATINEsConstraint(
+     *  allowLowerCase = false,
+     *  validationModality = "NIF"
+     * )
+     */
+    private $vatin;
+}
+```
