@@ -14,7 +14,7 @@ This bundle is available on [Packagist](https://packagist.org/packages/ricardona
 You can install this bundle using composer
 
 ```bash
-$ composer require ricardonavarrom/vatin-validator-bundle:dev-master
+$ composer require ricardonavarrom/vatin-validator-bundle
 ```
 or add the package to your composer.json file directly.
 
