@@ -14,5 +14,4 @@ class VATINValidatorLocatedNoExistsException extends \Exception
 
         $this->locale = $locale;
     }
-
 }

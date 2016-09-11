@@ -44,6 +44,7 @@ class VATINValidatorTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException ricardonavarrom\VATINValidatorBundle\Exception\VATINValidatorLocatedNoExistsException
+     * @expectedExceptionMessage There is no VATIN Validator for es locale
      */
     public function getLocatedValidator_withNonExistentLocale_throwsException()
     {
@@ -55,6 +56,7 @@ class VATINValidatorTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException ricardonavarrom\VATINValidatorBundle\Exception\VATINValidatorLocatedNoExistsException
+     * @expectedExceptionMessage There is no VATIN Validator for es locale
      */
     public function validate_withNonExistentLocale_throwsException()
     {

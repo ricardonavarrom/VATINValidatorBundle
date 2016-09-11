@@ -22,7 +22,10 @@ class VATINValidator implements VATINValidatorInterface
     {
         $locale = strtolower($locale);
         if (!array_key_exists($locale, $this->vatinValidatorsLocated)) {
-            throw new VATINValidatorLocatedNoExistsException($locale);
+            throw new VATINValidatorLocatedNoExistsException(
+                $locale,
+                sprintf('There is no VATIN Validator for %s locale', $locale)
+            );
         }
 
         return $this->vatinValidatorsLocated[$locale];
