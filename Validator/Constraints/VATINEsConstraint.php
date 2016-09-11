@@ -6,7 +6,7 @@ use ricardonavarrom\VATINValidatorBundle\Exception\VATINValidatorInvalidOptionVa
 use Symfony\Component\Validator\Constraint;
 
 /** @Annotation */
-class VATINConstraintEs extends Constraint
+class VATINEsConstraint extends Constraint
 {
     const VALID_VALIDATION_MODALITIES = [
         'NIF', 'NIE', 'CIF'

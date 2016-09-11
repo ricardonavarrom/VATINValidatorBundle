@@ -2,8 +2,8 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator\Constraints;
 
-use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINConstraintEs;
-use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINConstraintValidatorEs;
+use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINEsConstraint;
+use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINEsConstraintValidator;
 use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorES;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest;
@@ -21,13 +21,13 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     {
         $this->validatorService = m::mock(VATINValidatorES::class);
 
-        return new VATINConstraintValidatorEs($this->validatorService);
+        return new VATINEsConstraintValidator($this->validatorService);
     }
 
     /** @test */
     public function validate_whenNoValidationModalityAndValidVATIN_noViolation()
     {
-        $this->constraintToTest = new VATINConstraintEs();
+        $this->constraintToTest = new VATINEsConstraint();
         $this->validatorService->shouldReceive('validate')->andReturn(true);
 
         $this->validator->validate('87754163D', $this->constraintToTest);
@@ -38,7 +38,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     /** @test */
     public function validate_whenNoValidationModalityAndInvalidVATIN_buildViolation()
     {
-        $this->constraintToTest = new VATINConstraintEs();
+        $this->constraintToTest = new VATINEsConstraint();
         $this->validatorService->shouldReceive('validate')->andReturn(false);
 
         $this->validator->validate('87754163A', $this->constraintToTest);
@@ -52,7 +52,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     /** @test */
     public function validate_whenNIFValidationModalityAndValidNIF_noViolation()
     {
-        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'NIF']);
+        $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'NIF']);
         $this->validatorService->shouldReceive('validateNIF')->andReturn(true);
 
         $this->validator->validate('64076115R', $this->constraintToTest);
@@ -63,7 +63,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     /** @test */
     public function validate_whenNIFValidationModalityAndInvalidValidNIF_noViolation()
     {
-        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'NIF']);
+        $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'NIF']);
         $this->validatorService->shouldReceive('validateNIF')->andReturn(false);
 
         $this->validator->validate('64076115P', $this->constraintToTest);
@@ -77,7 +77,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     /** @test */
     public function validate_whenNIEValidationModalityAndValidNIE_noViolation()
     {
-        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'NIE']);
+        $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'NIE']);
         $this->validatorService->shouldReceive('validateNIE')->andReturn(true);
 
         $this->validator->validate('Y8658932K', $this->constraintToTest);
@@ -88,7 +88,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     /** @test */
     public function validate_whenNIEValidationModalityAndInvalidValidNIE_noViolation()
     {
-        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'NIE']);
+        $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'NIE']);
         $this->validatorService->shouldReceive('validateNIE')->andReturn(false);
 
         $this->validator->validate('Y8658932P', $this->constraintToTest);
@@ -102,7 +102,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     /** @test */
     public function validate_whenCIFValidationModalityAndValidCIF_noViolation()
     {
-        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'CIF']);
+        $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'CIF']);
         $this->validatorService->shouldReceive('validateCIF')->andReturn(true);
 
         $this->validator->validate('B22733109', $this->constraintToTest);
@@ -113,7 +113,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     /** @test */
     public function validate_whenCIFValidationModalityAndInvalidValidCIF_noViolation()
     {
-        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'CIF']);
+        $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'CIF']);
         $this->validatorService->shouldReceive('validateCIF')->andReturn(false);
 
         $this->validator->validate('B22733108', $this->constraintToTest);

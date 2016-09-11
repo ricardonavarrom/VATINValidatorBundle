@@ -6,7 +6,7 @@ use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorES;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
-class VATINConstraintValidatorEs extends ConstraintValidator
+class VATINEsConstraintValidator extends ConstraintValidator
 {
     /** @var VATINValidatorES */
     private $validator;
@@ -18,7 +18,7 @@ class VATINConstraintValidatorEs extends ConstraintValidator
 
     public function validate($value, Constraint $constraint)
     {
-        /** @var VATINConstraintEs $constraint */
+        /** @var VATINEsConstraint $constraint */
         if (!$constraint->validationModality) {
             $resultValidation = $this->validator->validate($value, $constraint->allowLowerCase);
             $validationModality = 'VATIN';

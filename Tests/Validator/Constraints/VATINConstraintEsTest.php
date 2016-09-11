@@ -2,7 +2,7 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator\Constraints;
 
-use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINConstraintEs;
+use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINEsConstraint;
 
 class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
     {
         $options = null;
 
-        $constraint = new VATINConstraintEs($options);
+        $constraint = new VATINEsConstraint($options);
 
         $this->assertTrue($constraint->allowLowerCase);
         $this->assertNull($constraint->validationModality);
@@ -22,7 +22,7 @@ class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
     {
         $options = ['allowLowerCase' => false];
 
-        $constraint = new VATINConstraintEs($options);
+        $constraint = new VATINEsConstraint($options);
 
         $this->assertEquals($options['allowLowerCase'], $constraint->allowLowerCase);
     }
@@ -36,7 +36,7 @@ class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
     {
         $options = ['allowLowerCase' => 'invalid option'];
 
-        new VATINConstraintEs($options);
+        new VATINEsConstraint($options);
     }
 
     /** @test */
@@ -44,7 +44,7 @@ class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
     {
         $options = ['validationModality' => 'NIE'];
 
-        $constraint = new VATINConstraintEs($options);
+        $constraint = new VATINEsConstraint($options);
 
         $this->assertEquals($options['validationModality'], $constraint->validationModality);
     }
@@ -58,6 +58,6 @@ class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
     {
         $options = ['validationModality' => 'invalid option'];
 
-        new VATINConstraintEs($options);
+        new VATINEsConstraint($options);
     }
 }

@@ -69,4 +69,4 @@ VATINValidatorBundle provides the following constraints:
 
 | Constraint               | Country           | Options                                                                                                                                       |
 | ------------------------ | ------------------| ----------------------------------------------------------------------------------------------------------------------------------------------|
-| **VATINConstraintEs**    | Spain             |                                                                                                                                               |
+| **VATINEsConstraint**    | Spain             |                                                                                                                                               |
