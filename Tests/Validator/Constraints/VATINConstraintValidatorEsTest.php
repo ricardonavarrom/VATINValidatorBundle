@@ -4,14 +4,14 @@ namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator\Constraints;
 
 use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINConstraintEs;
 use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINConstraintValidatorEs;
-use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorLocatedInterface;
+use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorES;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest;
 use Mockery as m;
 
 class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
 {
-    /** @var VATINValidatorLocatedInterface  */
+    /** @var VATINValidatorES */
     private $validatorService;
 
     /** @var Constraint */
@@ -19,21 +19,15 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
 
     protected function createValidator()
     {
-        $this->validatorService = m::mock(VATINValidatorLocatedInterface::class);
+        $this->validatorService = m::mock(VATINValidatorES::class);
 
         return new VATINConstraintValidatorEs($this->validatorService);
     }
 
-    protected function setUp()
-    {
-        parent::setUp();
-
-        $this->constraintToTest = new VATINConstraintEs();
-    }
-
     /** @test */
-    public function validate_whenValidVATIN_noViolation()
+    public function validate_whenNoValidationModalityAndValidVATIN_noViolation()
     {
+        $this->constraintToTest = new VATINConstraintEs();
         $this->validatorService->shouldReceive('validate')->andReturn(true);
 
         $this->validator->validate('87754163D', $this->constraintToTest);
@@ -42,13 +36,92 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     }
 
     /** @test */
-    public function validate_whenInvalidVATIN_buildViolation()
+    public function validate_whenNoValidationModalityAndInvalidVATIN_buildViolation()
     {
+        $this->constraintToTest = new VATINConstraintEs();
         $this->validatorService->shouldReceive('validate')->andReturn(false);
 
         $this->validator->validate('87754163A', $this->constraintToTest);
 
-        $this->buildViolation($this->constraintToTest->message)->setParameter('%vatin%', '87754163A')->assertRaised();
+        $this
+            ->buildViolation($this->constraintToTest->message)
+            ->setParameters(['%vatin%' =>'87754163A', '%validationModality%' => 'VATIN'])
+            ->assertRaised();
+    }
+
+    /** @test */
+    public function validate_whenNIFValidationModalityAndValidNIF_noViolation()
+    {
+        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'NIF']);
+        $this->validatorService->shouldReceive('validateNIF')->andReturn(true);
+
+        $this->validator->validate('64076115R', $this->constraintToTest);
+
+        $this->assertNoViolation();
+    }
+
+    /** @test */
+    public function validate_whenNIFValidationModalityAndInvalidValidNIF_noViolation()
+    {
+        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'NIF']);
+        $this->validatorService->shouldReceive('validateNIF')->andReturn(false);
+
+        $this->validator->validate('64076115P', $this->constraintToTest);
+
+        $this
+            ->buildViolation($this->constraintToTest->message)
+            ->setParameters(['%vatin%' =>'64076115P', '%validationModality%' => 'NIF'])
+            ->assertRaised();
+    }
+
+    /** @test */
+    public function validate_whenNIEValidationModalityAndValidNIE_noViolation()
+    {
+        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'NIE']);
+        $this->validatorService->shouldReceive('validateNIE')->andReturn(true);
+
+        $this->validator->validate('Y8658932K', $this->constraintToTest);
+
+        $this->assertNoViolation();
+    }
+
+    /** @test */
+    public function validate_whenNIEValidationModalityAndInvalidValidNIE_noViolation()
+    {
+        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'NIE']);
+        $this->validatorService->shouldReceive('validateNIE')->andReturn(false);
+
+        $this->validator->validate('Y8658932P', $this->constraintToTest);
+
+        $this
+            ->buildViolation($this->constraintToTest->message)
+            ->setParameters(['%vatin%' =>'Y8658932P', '%validationModality%' => 'NIE'])
+            ->assertRaised();
+    }
+
+    /** @test */
+    public function validate_whenCIFValidationModalityAndValidCIF_noViolation()
+    {
+        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'CIF']);
+        $this->validatorService->shouldReceive('validateCIF')->andReturn(true);
+
+        $this->validator->validate('B22733109', $this->constraintToTest);
+
+        $this->assertNoViolation();
+    }
+
+    /** @test */
+    public function validate_whenCIFValidationModalityAndInvalidValidCIF_noViolation()
+    {
+        $this->constraintToTest = new VATINConstraintEs(['validationModality' => 'CIF']);
+        $this->validatorService->shouldReceive('validateCIF')->andReturn(false);
+
+        $this->validator->validate('B22733108', $this->constraintToTest);
+
+        $this
+            ->buildViolation($this->constraintToTest->message)
+            ->setParameters(['%vatin%' =>'B22733108', '%validationModality%' => 'CIF'])
+            ->assertRaised();
     }
 
     protected function tearDown()
