@@ -4,7 +4,7 @@ namespace ricardonavarrom\VATINValidatorBundle\Validator;
 
 class VATINValidatorES implements VATINValidatorLocatedInterface
 {
-    private $controlDigits = 'TRWAGMYFPDXBNJZSQVHLCKE';
+    const CONTROL_DIGITS = 'TRWAGMYFPDXBNJZSQVHLCKE';
 
     public function validateNIF($vatin, $allowLowerCase = true)
     {
@@ -18,7 +18,7 @@ class VATINValidatorES implements VATINValidatorLocatedInterface
             $controlDigit = strtoupper($controlDigit);
         }
 
-        return $controlDigit === $this->controlDigits[((int)$numericPart) % 23];
+        return $controlDigit === self::CONTROL_DIGITS[((int)$numericPart) % 23];
     }
 
     public function validateNIE($vatin, $allowLowerCase = true)
@@ -36,7 +36,7 @@ class VATINValidatorES implements VATINValidatorLocatedInterface
         }
         $firstCharValue = $firstChars[$firstChar];
 
-        return $controlDigit === $this->controlDigits[((int)$firstCharValue . $numericPart) % 23];
+        return $controlDigit === self::CONTROL_DIGITS[((int)$firstCharValue . $numericPart) % 23];
     }
 
     public function validateCIF($vatin, $allowLowerCase = true)
