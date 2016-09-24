@@ -12,3 +12,14 @@ services:
         arguments: ["@ricardonavarrom.vatin_validator.es"]
         tags:
             - { name: validator.constraint_validator }
+
+    ricardonavarrom.vatin_validator.pt:
+        class: ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorPT
+        tags:
+            - { name: ricardonavarrom.vatin_validator_located, locale: "pt" }
+
+    ricardonavarrom.vatin_validator_constraint.pt:
+        class: ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINPtConstraintValidator
+        arguments: ["@ricardonavarrom.vatin_validator.pt"]
+        tags:
+            - { name: validator.constraint_validator }
