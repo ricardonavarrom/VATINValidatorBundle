@@ -61,7 +61,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     }
 
     /** @test */
-    public function validate_whenNIFValidationModalityAndInvalidValidNIF_noViolation()
+    public function validate_whenNIFValidationModalityAndInvalidValidNIF_buildViolation()
     {
         $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'NIF']);
         $this->validatorService->shouldReceive('validateNIF')->andReturn(false);
@@ -86,7 +86,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     }
 
     /** @test */
-    public function validate_whenNIEValidationModalityAndInvalidValidNIE_noViolation()
+    public function validate_whenNIEValidationModalityAndInvalidValidNIE_buildViolation()
     {
         $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'NIE']);
         $this->validatorService->shouldReceive('validateNIE')->andReturn(false);
@@ -111,7 +111,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
     }
 
     /** @test */
-    public function validate_whenCIFValidationModalityAndInvalidValidCIF_noViolation()
+    public function validate_whenCIFValidationModalityAndInvalidValidCIF_buildViolation()
     {
         $this->constraintToTest = new VATINEsConstraint(['validationModality' => 'CIF']);
         $this->validatorService->shouldReceive('validateCIF')->andReturn(false);
