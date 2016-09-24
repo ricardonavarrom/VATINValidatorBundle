@@ -58,9 +58,11 @@ $vatinIsValid = $locatedValidator->validate($vatin);
 Availables locales
 ------------------
 
-| Locale        | Country           | Local name                                                                                                                                               |
-| ------------- | ------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **es**        | Spain             | Número de Identificación Fiscal (for freelancers), Número de Identidad de Extranjero (for foreigners) or Código de Identificación Fiscal (for companies) |
+| Locale        | Country           | Local name                                                                                                                                                                   |
+| ------------- | ------------------| -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **es**        | Spain             | Número de Identificación Fiscal (for freelancers or singular persons), Número de Identidad de Extranjero (for foreigners) or Código de Identificación Fiscal (for companies) |
+| ------------- | ------------------| -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **pt**        | Portugal          | Número de identificação fiscal (for freelancers or singular persons) or Número de Identificação de Pessoa Colectiva (for companies)                                          |
 *We are working to implement more availables locales.*
 
 
@@ -71,6 +73,8 @@ VATINValidatorBundle provides the following constraints:
 | Constraint               | Country           | Options                                                                                                                                                                                                                                          |
 | ------------------------ | ------------------| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **VATINEsConstraint**    | Spain             | **message**: string (default: 'The VATIN "%vatin%" is not a valid "%validationModality%".'). **allowLowerCase**: boolean (default: true). **validationModality**: 'NIF', 'NIE' or 'CIF' (by default checks in all validation modalities).        |
+| ------------------------ | ------------------| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **VATINPtConstraint**    | Portugal          | **message**: string (default: 'The VATIN "%vatin%" is not a valid "%validationModality%".'). **validationModality**: 'NIF' or 'NIPC' (by default checks in all validation modalities).                                                           |
 For example:
 
 ```bash
