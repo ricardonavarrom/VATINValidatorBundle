@@ -3,7 +3,7 @@ services:
         class: ricardonavarrom\VATINValidatorBundle\Validator\VATINValidator
 
     ricardonavarrom.vatin_validator.es:
-        class: ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorES
+        class: ricardonavarrom\VATINValidator\Validator\VATINValidatorES
         tags:
             - { name: ricardonavarrom.vatin_validator_located, locale: "es" }
 
@@ -14,7 +14,7 @@ services:
             - { name: validator.constraint_validator }
 
     ricardonavarrom.vatin_validator.pt:
-        class: ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorPT
+        class: ricardonavarrom\VATINValidator\Validator\VATINValidatorPT
         tags:
             - { name: ricardonavarrom.vatin_validator_located, locale: "pt" }
 

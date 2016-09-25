@@ -2,9 +2,9 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator;
 
+use ricardonavarrom\VATINValidator\Validator\VATINValidatorLocatedInterface;
 use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidator;
 use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorInterface;
-use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorLocatedInterface;
 use Mockery as m;
 
 class VATINValidatorTest extends \PHPUnit_Framework_TestCase
@@ -86,6 +86,4 @@ class VATINValidatorTest extends \PHPUnit_Framework_TestCase
 
         m::close();
     }
-
-
 }

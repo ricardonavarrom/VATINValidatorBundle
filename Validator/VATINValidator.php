@@ -2,6 +2,7 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Validator;
 
+use ricardonavarrom\VATINValidator\Validator\VATINValidatorLocatedInterface;
 use ricardonavarrom\VATINValidatorBundle\Exception\VATINValidatorLocatedNoExistsException;
 
 class VATINValidator implements VATINValidatorInterface

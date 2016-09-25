@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f5acb56692e2de4bd33d5f902993d286",
-    "content-hash": "182e3d92f5f454cb65bc5b1fbd7d87bc",
+    "hash": "bc00c0dbdcc8c3da22bbf6d219801316",
+    "content-hash": "6275f33e48a38d69baa59adf690af97d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -661,6 +661,52 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "ricardonavarrom/vatin-validator",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ricardonavarrom/VATINValidator.git",
+                "reference": "9bdc27741a18097af9d5807c399f7dccff09d6be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ricardonavarrom/VATINValidator/zipball/9bdc27741a18097af9d5807c399f7dccff09d6be",
+                "reference": "9bdc27741a18097af9d5807c399f7dccff09d6be",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8,*",
+                "satooshi/php-coveralls": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ricardonavarrom\\VATINValidator\\": "src/VATINValidator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricardo Navarro Moral",
+                    "email": "ricardonavarromoral@gmail.com"
+                }
+            ],
+            "description": "A PHP library for for validating VAT identification numbers (VATINs).",
+            "homepage": "https://github.com/ricardonavarrom/VATINValidator",
+            "keywords": [
+                "PHP Library",
+                "php",
+                "validation",
+                "vat",
+                "vat identification numbers",
+                "vat validation"
+            ],
+            "time": "2016-09-25 13:41:00"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -1797,7 +1843,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/ee06e7b564ea4dc9b90605d894c2626f87df334d",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/812fcbd1c40cb5cd33e7ab48ffcf2ce8d202c74e",
                 "reference": "ee06e7b564ea4dc9b90605d894c2626f87df334d",
                 "shasum": ""
             },

@@ -2,9 +2,9 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator\Constraints;
 
+use ricardonavarrom\VATINValidator\Validator\VATINValidatorPT;
 use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINPtConstraint;
 use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINPtConstraintValidator;
-use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorPT;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest;
 use Mockery as m;

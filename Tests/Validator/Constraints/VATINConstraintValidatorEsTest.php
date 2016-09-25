@@ -2,9 +2,9 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator\Constraints;
 
+use ricardonavarrom\VATINValidator\Validator\VATINValidatorES;
 use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINEsConstraint;
 use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINEsConstraintValidator;
-use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorES;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest;
 use Mockery as m;
@@ -45,7 +45,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
 
         $this
             ->buildViolation($this->constraintToTest->message)
-            ->setParameters(['%vatin%' =>'87754163A', '%validationModality%' => 'VATIN'])
+            ->setParameters(['%vatin%' => '87754163A', '%validationModality%' => 'VATIN'])
             ->assertRaised();
     }
 
@@ -70,7 +70,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
 
         $this
             ->buildViolation($this->constraintToTest->message)
-            ->setParameters(['%vatin%' =>'64076115P', '%validationModality%' => 'NIF'])
+            ->setParameters(['%vatin%' => '64076115P', '%validationModality%' => 'NIF'])
             ->assertRaised();
     }
 
@@ -95,7 +95,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
 
         $this
             ->buildViolation($this->constraintToTest->message)
-            ->setParameters(['%vatin%' =>'Y8658932P', '%validationModality%' => 'NIE'])
+            ->setParameters(['%vatin%' => 'Y8658932P', '%validationModality%' => 'NIE'])
             ->assertRaised();
     }
 
@@ -120,7 +120,7 @@ class VATINConstraintValidatorEsTest extends AbstractConstraintValidatorTest
 
         $this
             ->buildViolation($this->constraintToTest->message)
-            ->setParameters(['%vatin%' =>'B22733108', '%validationModality%' => 'CIF'])
+            ->setParameters(['%vatin%' => 'B22733108', '%validationModality%' => 'CIF'])
             ->assertRaised();
     }
 

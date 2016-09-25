@@ -2,6 +2,8 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Validator;
 
+use ricardonavarrom\VATINValidator\Validator\VATINValidatorLocatedInterface;
+
 interface VATINValidatorInterface
 {
     public function addVATINValidatorLocated($locale, VATINValidatorLocatedInterface $vatinValidatorLocated);

@@ -2,7 +2,7 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Validator\Constraints;
 
-use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorPT;
+use ricardonavarrom\VATINValidator\Validator\VATINValidatorPT;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
