@@ -3,6 +3,7 @@ VATINValidatorBundle
 [![Build Status](https://travis-ci.org/ricardonavarrom/VATINValidatorBundle.svg?branch=master)](https://travis-ci.org/ricardonavarrom/VATINValidatorBundle)
 [![Coverage Status](https://coveralls.io/repos/github/ricardonavarrom/VATINValidatorBundle/badge.svg?branch=master)](https://coveralls.io/github/ricardonavarrom/VATINValidatorBundle?branch=master)
 [![Total Downloads](https://poser.pugx.org/ricardonavarrom/vatin-validator-bundle/downloads)](https://packagist.org/packages/ricardonavarrom/vatin-validator-bundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f8d6443b-70c6-4eef-8310-e25e71162297/mini.png)](https://insight.sensiolabs.com/projects/f8d6443b-70c6-4eef-8310-e25e71162297)
 
 A Symfony bundle for for validating VAT identification numbers (VATINs) based on [VATINValidator PHP library](https://github.com/ricardonavarrom/VATINValidator).
 
