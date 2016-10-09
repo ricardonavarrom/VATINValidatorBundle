@@ -2,6 +2,7 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator\Constraints;
 
+use ricardonavarrom\VATINValidatorBundle\Exception\VATINValidatorInvalidOptionValueException;
 use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINPtConstraint;
 
 class VATINConstraintPtTest extends \PHPUnit_Framework_TestCase
@@ -35,6 +36,13 @@ class VATINConstraintPtTest extends \PHPUnit_Framework_TestCase
     {
         $options = ['validationModality' => 'invalid option'];
 
-        new VATINPTConstraint($options);
+        try {
+            new VATINPTConstraint($options);
+        } catch (VATINValidatorInvalidOptionValueException $e) {
+            $this->assertEquals('validationModality', $e->getOption());
+            $this->assertEquals('invalid option', $e->getValue());
+
+            throw $e;
+        }
     }
 }

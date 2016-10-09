@@ -3,6 +3,7 @@
 namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator;
 
 use ricardonavarrom\VATINValidator\Validator\VATINValidatorLocatedInterface;
+use ricardonavarrom\VATINValidatorBundle\Exception\VATINValidatorLocatedNoExistsException;
 use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidator;
 use ricardonavarrom\VATINValidatorBundle\Validator\VATINValidatorInterface;
 use Mockery as m;
@@ -50,7 +51,13 @@ class VATINValidatorTest extends \PHPUnit_Framework_TestCase
     {
         $locale = 'es';
 
-        $this->validator->getLocatedValidator($locale);
+        try {
+            $this->validator->getLocatedValidator($locale);
+        } catch (VATINValidatorLocatedNoExistsException $e) {
+            $this->assertEquals($locale, $e->getLocale());
+
+            throw $e;
+        }
     }
 
     /**
@@ -63,7 +70,13 @@ class VATINValidatorTest extends \PHPUnit_Framework_TestCase
         $vatin = '18018830D';
         $locale = 'es';
 
-        $this->validator->validate($vatin, $locale);
+        try {
+            $this->validator->validate($vatin, $locale);
+        } catch (VATINValidatorLocatedNoExistsException $e) {
+            $this->assertEquals($locale, $e->getLocale());
+
+            throw $e;
+        }
     }
 
     /** @test */

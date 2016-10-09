@@ -2,6 +2,7 @@
 
 namespace ricardonavarrom\VATINValidatorBundle\Tests\Validator\Constraints;
 
+use ricardonavarrom\VATINValidatorBundle\Exception\VATINValidatorInvalidOptionValueException;
 use ricardonavarrom\VATINValidatorBundle\Validator\Constraints\VATINEsConstraint;
 
 class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
@@ -36,7 +37,14 @@ class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
     {
         $options = ['allowLowerCase' => 'invalid option'];
 
-        new VATINEsConstraint($options);
+        try {
+            new VATINEsConstraint($options);
+        } catch (VATINValidatorInvalidOptionValueException $e) {
+            $this->assertEquals('allowLowerCase', $e->getOption());
+            $this->assertEquals('invalid option', $e->getValue());
+
+            throw $e;
+        }
     }
 
     /** @test */
@@ -58,6 +66,13 @@ class VATINConstraintEsTest extends \PHPUnit_Framework_TestCase
     {
         $options = ['validationModality' => 'invalid option'];
 
-        new VATINEsConstraint($options);
+        try {
+            new VATINEsConstraint($options);
+        } catch (VATINValidatorInvalidOptionValueException $e) {
+            $this->assertEquals('validationModality', $e->getOption());
+            $this->assertEquals('invalid option', $e->getValue());
+
+            throw $e;
+        }
     }
 }
