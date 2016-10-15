@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d92774e550f222d622d3cd375044e6b4",
-    "content-hash": "5f829a3173b2ac199317eb52ae2b4e9f",
+    "hash": "f54fb18d7971235b1349cb0867b1204d",
+    "content-hash": "3e1ec17ea151b8b3efab8015dac84873",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -626,16 +626,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
             "require": {
@@ -669,20 +669,20 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-09-19 16:02:08"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "ricardonavarrom/vatin-validator",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ricardonavarrom/VATINValidator.git",
-                "reference": "1565fc3ddf0b9384249e2f5707909da56f49235b"
+                "reference": "83cd512dc8a35af5dad0b85edbb808543c63f882"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ricardonavarrom/VATINValidator/zipball/1565fc3ddf0b9384249e2f5707909da56f49235b",
-                "reference": "1565fc3ddf0b9384249e2f5707909da56f49235b",
+                "url": "https://api.github.com/repos/ricardonavarrom/VATINValidator/zipball/83cd512dc8a35af5dad0b85edbb808543c63f882",
+                "reference": "83cd512dc8a35af5dad0b85edbb808543c63f882",
                 "shasum": ""
             },
             "require-dev": {
@@ -715,7 +715,7 @@
                 "vat identification numbers",
                 "vat validation"
             ],
-            "time": "2016-10-09 17:49:21"
+            "time": "2016-10-15 11:08:59"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -1849,12 +1849,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "82af09a8ba58fd4a94a3f2dd52e8d8d7cff890e2"
+                "reference": "900faf0a7be16fc4872e6d1843d0edbb954bf9f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/82af09a8ba58fd4a94a3f2dd52e8d8d7cff890e2",
-                "reference": "82af09a8ba58fd4a94a3f2dd52e8d8d7cff890e2",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/900faf0a7be16fc4872e6d1843d0edbb954bf9f0",
+                "reference": "900faf0a7be16fc4872e6d1843d0edbb954bf9f0",
                 "shasum": ""
             },
             "require": {
@@ -1906,7 +1906,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2016-10-04 08:20:51"
+            "time": "2016-10-14 09:17:26"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2919,16 +2919,16 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v3.0.8",
+            "version": "v3.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "3c20d16512f37d2be159eca0411b99a141b90fa4"
+                "reference": "b9be7f1b3b2e8bcfc1debefc901b71da923a5e5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/3c20d16512f37d2be159eca0411b99a141b90fa4",
-                "reference": "3c20d16512f37d2be159eca0411b99a141b90fa4",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/b9be7f1b3b2e8bcfc1debefc901b71da923a5e5c",
+                "reference": "b9be7f1b3b2e8bcfc1debefc901b71da923a5e5c",
                 "shasum": ""
             },
             "require": {
@@ -2967,7 +2967,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2016-09-06 01:30:19"
+            "time": "2016-10-10 14:17:42"
         },
         {
             "name": "symfony/phpunit-bridge",
